@@ -57,8 +57,8 @@ class Strelitzia extends EventEmitter {
 	}
 
 	/**
-	 * Logs in to the gateway
-	 * @param {string} [url='localhost'] The URL of the gateway
+	 * Connects to the message broker
+	 * @param {string} [url='localhost'] The URL of the message broker
 	 * @param {string[]} events Array of events
 	 * @memberof Strelitzia
 	 */
