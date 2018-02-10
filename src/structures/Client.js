@@ -14,7 +14,7 @@ class Strelitzia extends EventEmitter {
 	 * @typedef {object} StrelitziaOptions
 	 * @prop {string} [token] The token
 	 * @prop {string} [id] The client ID
-	 * @prop {string} [prefix='='] The command prefi
+	 * @prop {string} [prefix='='] The command prefix
 	 */
 
 	/**
