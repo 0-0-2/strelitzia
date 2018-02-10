@@ -29,11 +29,14 @@ class Command {
 		 * @type {string}
 		 */
 		this.name = options.name;
+
 		/**
 		 * The command aliases
-		 * @type {?string[]}
+		 * @type {string[]}
+		 * @default []
 		 */
 		this.aliases = options.aliases || [];
+
 		/**
 		 * The command description
 		 * @type {?string}
@@ -42,13 +45,14 @@ class Command {
 
 		/**
 		 * Array of subcommands, if any
-		 * @type {?SubCommand[]}
+		 * @type {SubCommand[]}
+		 * @default []
 		 */
 		this.subCommands = [];
 	}
 
 	/**
-	 * Determines if the command is a subcommand or not
+	 * Determines if the command is a subcommand or not.
 	 * @returns {boolean}
 	 * @memberof Command
 	 */
@@ -57,7 +61,7 @@ class Command {
 	}
 
 	/**
-	 * Runs the command
+	 * Runs the command.
 	 * @param {object} message The raw message data
 	 * @param {string} args The parsed arguments
 	 * @abstract

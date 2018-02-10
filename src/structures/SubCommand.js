@@ -30,16 +30,20 @@ class SubCommand {
 		 * @type {string}
 		 */
 		this.name = options.name;
+
 		/**
 		 * The subcommand aliases
-		 * @type {?string[]}
+		 * @type {string[]}
+		 * @default []
 		 */
 		this.aliases = options.aliases || [];
+
 		/**
 		 * The subcommand's description
 		 * @type {?string}
 		 */
 		this.description = options.description;
+
 		/**
 		 * A useless value added by Crawl to denote that subcommands are subcommands
 		 * Use {@link SubCommand#isSubCommand} instead
@@ -47,6 +51,7 @@ class SubCommand {
 		 * @default true
 		 */
 		this.subCommand = true;
+
 		/**
 		 * The subcommand's parent
 		 * @type {string}

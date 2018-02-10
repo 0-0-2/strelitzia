@@ -10,7 +10,7 @@ class Dispatcher {
 	constructor(client) {
 		/**
 		 * The client instance
-		 * @name Command#client
+		 * @name Dispatcher#client
 		 * @readonly
 		 */
 		Object.defineProperty(this, 'client', { value: client });

@@ -24,31 +24,38 @@ class Strelitzia extends EventEmitter {
 	 */
 	constructor(options = {}) {
 		super();
+
 		/**
 		 * A chainable query for the rest
 		 * @type {@spectacles/rest.ChainableQuery}
 		 */
 		this.rest = rest(options.token);
+
 		/**
 		 * The client ID
 		 * @type {string}
 		 */
 		this.id = options.id;
+
 		/**
 		 * The command prefix
 		 * @type {string}
+		 * @default '='
 		 */
 		this.prefix = options.prefix || '=';
+
 		/**
 		 * The consumer of this client
 		 * @type {Amqp}
 		 */
 		this.consumer = new Amqp('consumer');
+
 		/**
 		 * The dispatcher of this client
 		 * @type {Dispatcher}
 		 */
 		this.dispatcher = new Dispatcher(this);
+
 		/**
 		 * The client registry
 		 * @type {Registry}
@@ -57,7 +64,7 @@ class Strelitzia extends EventEmitter {
 	}
 
 	/**
-	 * Connects to the message broker
+	 * Connects to the message broker.
 	 * @param {string} [url='localhost'] The URL of the message broker
 	 * @param {string[]} events Array of events
 	 * @memberof Strelitzia

@@ -23,6 +23,7 @@ class Registry {
 		 * @type {Map<string, Event>}
 		 */
 		this.events = new Map();
+
 		/**
 		 * Cached command instances
 		 * @type {Map<string, Command>}
