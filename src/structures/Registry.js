@@ -11,9 +11,22 @@ class Registry {
 	 * @memberof Registry
 	 */
 	constructor(client) {
+		/**
+		 * The client instance
+		 * @name Registry#client
+		 * @readonly
+		 */
 		Object.defineProperty(this, 'client', { value: client });
 
+		/**
+		 * Cached event instances
+		 * @type {Map<string, Event>}
+		 */
 		this.events = new Map();
+		/**
+		 * Cached command instances
+		 * @type {Map<string, Command>}
+		 */
 		this.commands = new Map();
 	}
 

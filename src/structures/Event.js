@@ -16,9 +16,27 @@ class Event {
 	 * @memberof Event
 	 */
 	constructor(client, options = {}) {
+		/**
+		 * The client instance
+		 * @name Event#client
+		 * @readonly
+		 */
 		Object.defineProperty(this, 'client', { value: client });
+		/**
+		 * The event name
+		 * @type {string}
+		 */
 		this.name = options.name;
+		/**
+		 * The event type
+		 * @default 'event'
+		 * @type {string}
+		 */
 		this.type = 'event';
+		/**
+		 * If this event is enabled
+		 * @type {boolean}
+		 */
 		this.enabled = Boolean(options.enabled);
 	}
 

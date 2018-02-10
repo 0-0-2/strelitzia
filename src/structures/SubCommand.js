@@ -6,7 +6,7 @@ class SubCommand {
 	 * Options that are passed when creating a new subcommand
 	 * @typedef {object} SubCommandOptions
 	 * @prop {string} [name] The subcommand name
-	 * @prop {string[]} [aliases] The subcommand aliases
+	 * @prop {string[]} [aliases=[]] The subcommand aliases
 	 * @prop {string} [description] The subcommand description
 	 * @prop {string} [parent] The subcommand parent
 	 */
@@ -18,12 +18,39 @@ class SubCommand {
 	 * @memberof SubCommand
 	 */
 	constructor(client, options = {}) {
+		/**
+		 * The client instance
+		 * @name SubCommand#client
+		 * @readonly
+		 */
 		Object.defineProperty(this, 'client', { value: client });
 
+		/**
+		 * The subcommand's name
+		 * @type {string}
+		 */
 		this.name = options.name;
+		/**
+		 * The subcommand aliases
+		 * @type {?string[]}
+		 */
 		this.aliases = options.aliases || [];
+		/**
+		 * The subcommand's description
+		 * @type {?string}
+		 */
 		this.description = options.description;
+		/**
+		 * A useless value added by Crawl to denote that subcommands are subcommands
+		 * Use {@link SubCommand#isSubCommand} instead
+		 * @type {boolean}
+		 * @default true
+		 */
 		this.subCommand = true;
+		/**
+		 * The subcommand's parent
+		 * @type {string}
+		 */
 		this.parent = options.parent;
 	}
 

@@ -8,6 +8,11 @@ class Dispatcher {
 	 * @memberof Dispatcher
 	 */
 	constructor(client) {
+		/**
+		 * The client instance
+		 * @name Command#client
+		 * @readonly
+		 */
 		Object.defineProperty(this, 'client', { value: client });
 	}
 

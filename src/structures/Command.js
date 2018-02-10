@@ -6,7 +6,7 @@ class Command {
 	 * Options that are passed when creating a new command
 	 * @typedef {object} CommandOptions
 	 * @prop {string} [name] The command name
-	 * @prop {string[]} [aliases] The command aliases
+	 * @prop {string[]} [aliases=[]] The command aliases
 	 * @prop {string} [description] The command description
 	 */
 
@@ -17,12 +17,33 @@ class Command {
 	 * @memberof Command
 	 */
 	constructor(client, options = {}) {
+		/**
+		 * The client instance
+		 * @name Command#client
+		 * @readonly
+		 */
 		Object.defineProperty(this, 'client', { value: client });
 
+		/**
+		 * The command name
+		 * @type {string}
+		 */
 		this.name = options.name;
+		/**
+		 * The command aliases
+		 * @type {?string[]}
+		 */
 		this.aliases = options.aliases || [];
+		/**
+		 * The command description
+		 * @type {?string}
+		 */
 		this.description = options.description;
 
+		/**
+		 * Array of subcommands, if any
+		 * @type {?SubCommand[]}
+		 */
 		this.subCommands = [];
 	}
 
