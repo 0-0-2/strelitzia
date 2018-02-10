@@ -34,8 +34,8 @@ class Event {
 				 * Emmited when there was an error
 				 * @event Strelitzia#error
 				 * @prop {Strelitzia|Event} instance The instance where the error occured
-				 * @prop {*[]} args The arguments passed
-				 * @prop {Error|TypeError|RangeError} error The error received
+				 * @prop {*[]|Error|TypeError|RangeError} errorOrArgs The arguments passed or an error instance
+				 * @prop {?(Error|TypeError|RangeError)} error The error received
 				 */
 				this.client.emit('error', this, args, error);
 			}
