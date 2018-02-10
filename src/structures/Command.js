@@ -1,4 +1,15 @@
+/**
+ * A command that can be ran
+ */
 class Command {
+	/**
+	 * Options that are passed when creating a new command
+	 * @typedef {object} CommandOptions
+	 * @prop {string} [name] The command name
+	 * @prop {string[]} [aliases] The command aliases
+	 * @prop {string} [description] The command description
+	 */
+
 	/**
 	 * Creates an instance of Command.
 	 * @param {Strelitzia} client The client
@@ -14,14 +25,6 @@ class Command {
 
 		this.subCommands = [];
 	}
-
-	/**
-	 * Options that are passed when creating a new command
-	 * @typedef {object} CommandOptions
-	 * @prop {string} [name] The command name
-	 * @prop {string[]} [aliases] The command aliases
-	 * @prop {string} [description] The command description
-	 */
 
 	/**
 	 * Determines if the command is a subcommand or not

@@ -1,6 +1,9 @@
+/**
+ * A dispatcher for events
+ */
 class Dispatcher {
 	/**
-	 * Creates a new instance of a Dispatcher
+	 * Creates a new instance of a Dispatcher.
 	 * @param {Strelitzia} client The client
 	 * @memberof Dispatcher
 	 */
@@ -9,7 +12,7 @@ class Dispatcher {
 	}
 
 	/**
-	 * Handle the message
+	 * Handle the message.
 	 * @param {object} message The raw message
 	 * @returns {void}
 	 * @memberof Dispatcher
@@ -24,7 +27,7 @@ class Dispatcher {
 	}
 
 	/**
-	 * Determines if a message object should be handled
+	 * Determines if a message object should be handled.
 	 * @param {object} message The raw message data
 	 * @returns {boolean}
 	 * @memberof Dispatcher
@@ -36,7 +39,7 @@ class Dispatcher {
 	}
 
 	/**
-	 * Parses the raw message data
+	 * Parses the raw message data.
 	 * @param {object} message The raw message
 	 * @returns {?Array<Command|SubCommand, string>} The parsed message, containing the command
 	 * and the arguments

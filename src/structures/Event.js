@@ -1,4 +1,14 @@
+/**
+ * An event that will be processed by the {@link Strelitzia} instance
+ */
 class Event {
+	/**
+	 * Options that are passed when creating a new event
+	 * @typedef {object} EventOptions
+	 * @prop {string} [name] The event name
+	 * @prop {boolean} [enabled] If the event should be enabled
+	 */
+
 	/**
 	 * Creates an instance of Event.
 	 * @param {Strelitzia} client The client
@@ -13,14 +23,7 @@ class Event {
 	}
 
 	/**
-	 * Options that are passed when creating a new event
-	 * @typedef {object} EventOptions
-	 * @prop {string} [name] The event name
-	 * @prop {boolean} [enabled] If the event should be enabled
-	 */
-
-	/**
-	 * Runs the event if the event is enabled
+	 * Runs the event if the event is enabled.
 	 * @private
 	 * @param {*[]} args The raw arguments received
 	 * @memberof Event
@@ -43,7 +46,7 @@ class Event {
 	}
 
 	/**
-	 * Function that takes the event input and processes it
+	 * Function that takes the event input and processes it.
 	 * @param {*[]} args The raw arguments received
 	 * @abstract
 	 * @memberof Event

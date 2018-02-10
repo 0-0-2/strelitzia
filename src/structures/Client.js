@@ -4,22 +4,11 @@ const { Amqp } = require('@spectacles/brokers');
 const Dispatcher = require('../structures/Dispatcher');
 const Registry = require('../structures/Registry');
 
+/**
+ * The Strelitzia client
+ * @extends {EventEmitter}
+ */
 class Strelitzia extends EventEmitter {
-	/**
-	 * Creates an instance of Strelitzia.
-	 * @param {StrelitziaOptions} [options={}] The client options
-	 * @memberof Strelitzia
-	 */
-	constructor(options = {}) {
-		super();
-		this.rest = rest(options.token);
-		this.id = options.id;
-		this.prefix = options.prefix || '=';
-		this.consumer = new Amqp('consumer');
-		this.dispatcher = new Dispatcher(this);
-		this.registry = new Registry(this);
-	}
-
 	/**
 	 * Options passed to Strelitzia when creating a new instance
 	 * @typedef {object} StrelitziaOptions
@@ -27,6 +16,45 @@ class Strelitzia extends EventEmitter {
 	 * @prop {string} [id] The client ID
 	 * @prop {string} [prefix='='] The command prefi
 	 */
+
+	/**
+	 * Creates an instance of Strelitzia.
+	 * @param {StrelitziaOptions} [options={}] The client options
+	 * @memberof Strelitzia
+	 */
+	constructor(options = {}) {
+		super();
+		/**
+		 * A chainable query for the rest
+		 * @type {@spectacles/rest.ChainableQuery}
+		 */
+		this.rest = rest(options.token);
+		/**
+		 * The client ID
+		 * @type {string}
+		 */
+		this.id = options.id;
+		/**
+		 * The command prefix
+		 * @type {string}
+		 */
+		this.prefix = options.prefix || '=';
+		/**
+		 * The consumer of this client
+		 * @type {Amqp}
+		 */
+		this.consumer = new Amqp('consumer');
+		/**
+		 * The dispatcher of this client
+		 * @type {Dispatcher}
+		 */
+		this.dispatcher = new Dispatcher(this);
+		/**
+		 * The client registry
+		 * @type {Registry}
+		 */
+		this.registry = new Registry(this);
+	}
 
 	/**
 	 * Logs in to the gateway

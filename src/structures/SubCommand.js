@@ -1,4 +1,16 @@
+/**
+ * A subcommand that can be ran
+ */
 class SubCommand {
+	/**
+	 * Options that are passed when creating a new subcommand
+	 * @typedef {object} SubCommandOptions
+	 * @prop {string} [name] The subcommand name
+	 * @prop {string[]} [aliases] The subcommand aliases
+	 * @prop {string} [description] The subcommand description
+	 * @prop {string} [parent] The subcommand parent
+	 */
+
 	/**
 	 * Creates an instance of SubCommand.
 	 * @param {Strelitzia} client The client
@@ -16,16 +28,7 @@ class SubCommand {
 	}
 
 	/**
-	 * Options that are passed when creating a new subcommand
-	 * @typedef {object} SubCommandOptions
-	 * @prop {string} [name] The subcommand name
-	 * @prop {string[]} [aliases] The subcommand aliases
-	 * @prop {string} [description] The subcommand description
-	 * @prop {string} [parent] The subcommand parent
-	 */
-
-	/**
-	 * Determines if the command is a subcommand or not
+	 * Determines if the command is a subcommand or not.
 	 * @returns {boolean}
 	 * @memberof SubCommand
 	 */
@@ -34,7 +37,7 @@ class SubCommand {
 	}
 
 	/**
-	 * Runs the subcommand
+	 * Runs the subcommand.
 	 * @param {object} message The raw message data
 	 * @param {string} args The parsed arguments
 	 * @abstract

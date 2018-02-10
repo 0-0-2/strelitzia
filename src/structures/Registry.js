@@ -1,6 +1,9 @@
 const { readdirSync } = require('fs');
 const { extname, join } = require('path');
 
+/**
+ * The registry of a {@link Strelitzia} instance
+ */
 class Registry {
 	/**
 	 * Creates an instance of Registry.
